@@ -1,0 +1,11 @@
+<template >
+    <lightning-card  variant="Narrow"  title="Account - Box Files" icon-name="custom:custom69">
+        <!-- <lightning-spinner lwc:if={isFetchingBoxData} alternative-text="Loading Box Items..." size="x-small"></lightning-spinner> -->
+        <div lwc:if={hasData}>
+            <lightning-datatable is-loading={isFetchingBoxData} key-field="id" data={boxColumnData} columns={boxColumnsTitle} onrowaction={handleDataTableRowSelection} ></lightning-datatable>
+        </div>
+        <p lwc:elseif={isEmpty}>No files available for this Account!</p>
+
+    </lightning-card>
+    
+</template>
